@@ -1,0 +1,36 @@
+<script type="text/babel">
+    function Btn({text, fontSize = 14}) {
+        console.log(text, "was rendered");
+
+        return (
+            <button
+                style={{
+                    backgroundColor: "tomato",
+                    color: "white",
+                    padding: "10px 20px",
+                    border: 0,
+                    borderRadius: 10,
+                    cursor: "pointer",
+                    fontSize: fontSize,
+                }}
+            >
+            {text}
+            </button>
+        );
+    }
+    Btn.propTypes = {
+        text: PropTypes.string.isRequired,
+        fontSize: PropTypes.number.isRequired,
+    }
+    function App() {
+        return (
+            <div>
+                <Btn text="Save Changes" fontSize={18}/>
+                <Btn text={"hey"}/>
+            </div>
+        );
+    }
+    
+    const root = document.getElementById("root");
+    ReactDOM.render(<App />, root);
+</script>
